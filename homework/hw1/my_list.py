@@ -8,7 +8,6 @@ Implementation requirement:
 - Do not call built-in list methods, except for append()
 """
 
-
 def count(num_list, num):
     """
     Find how many times `num` is in `num_list`.
@@ -16,6 +15,11 @@ def count(num_list, num):
     :param num: integer
     :return: integer, representing how many times `num` is in `num_list`
     """
+    counter = 0
+    for x in num_list:
+        if x == num:
+            counter += 1
+    return counter
 
 
 def extend(num_list, another_num_list):
@@ -26,6 +30,8 @@ def extend(num_list, another_num_list):
     :param another_num_list: list of integers
     :return: list of integers
     """
+    new_list = num_list + another_num_list
+    return new_list
 
 
 def remove(num_list, num):
@@ -36,7 +42,11 @@ def remove(num_list, num):
     :param num: integer
     :return: list of integers
     """
-
+    new_list = []
+    for item in num_list:
+        if item != num:
+            new_list.append(item)
+    return new_list
 
 def index(num_list, num):
     """
@@ -47,3 +57,6 @@ def index(num_list, num):
     `num`
     :return: None, if `num` not found
     """
+    for i in range(len(num_list)):
+        if num_list[i] == num:
+            return i

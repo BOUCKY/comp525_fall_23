@@ -26,9 +26,35 @@ def hide(sentence):
     :return: empty string or 1-charcter string identical with `sentence` if
         `sentence` is empty string or 1-character string
     Example 1: hide('babble') returns 'ba**le'
-    Example 2: hide('more is less') returns 'more is*l*s*'
+    Example 2: hide('more is less') returns 'more is*l***'
     """
 
+    data = ''
+    seen_chars = []
+    for char in sentence:
+
+        if char in seen_chars:
+            data += '*'
+        else:
+
+            seen_chars.append(char)
+            data += char
+
+    return data
+
+
+    # data = ''
+    # seen_chars = {}
+    # for char in sentence:
+
+    #     if char in seen_chars:
+    #         data += '*'
+    #     else:
+
+    #         seen_chars[char] = 0
+    #         data += char
+
+    # return data
 
 def reduce_adjacent(num_lst):
     """
@@ -41,6 +67,11 @@ def reduce_adjacent(num_lst):
         repoeats
     Example: reduce_adjancent([1, 2, 2, 3]) returns [1, 2, 3]
     """
+    result = []
+    for num in num_lst:
+        if num not in result:
+            result.append(num)
+    return result
 
 
 def reverse(word):

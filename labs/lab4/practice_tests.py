@@ -3,8 +3,8 @@ test_parse_season.py
 Mihaela
 Created March 20, 2019. Updated October 15, 2019
 """
-
 import unittest
+import sys
 from .practice_dictionaries import Practice
 
 

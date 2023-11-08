@@ -21,7 +21,10 @@ class Practice(object):
         Returns: string with season names and descriptions and no spaces or
             other characters in between
         """
-        pass
+        result = ""
+        for season, description in season_dict.items():
+            result += f"{season}{description}"
+        return result.strip()
 
     def update_inventory(self, inventory_dict, quantity_added):
         """
@@ -32,7 +35,10 @@ class Practice(object):
             values: int - inventory quantity of item
         Returns: dictionry
         """
-        pass
+        updated_inventory = {}
+        for item, quantity in inventory_dict.items():
+            updated_inventory[item] = quantity + quantity_added
+        return updated_inventory
 
 if __name__ == '__main__':
     p = Practice()

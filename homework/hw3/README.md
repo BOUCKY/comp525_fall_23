@@ -4,7 +4,7 @@
 ### Purpose of the homework
 In this homework assignment you will:
 - Test, design, and implement methods of the linked list implementation of an UnsortedList ADT
-- Practice test-driven, incremental develment
+- Practice test-driven, incremental development
 - Develop code that meets code analysis and styling requirements
 - Apply version control that supports incremental development.
 
@@ -21,20 +21,8 @@ class Node:
 ```
 The `Node` class implements the data type of an element in a linked list
 implementation of the Unsorted List ADT. The class has two attributes:
-* `self._data`holds an integer
-* `self._next`holds a reference to a Node object
-
-The API of this class has:
-* getters for both attributes `self._data` and `self._next`
-* setters for both both attributes
-* `__str__()` special method to produce a string representation of a Node 
-  object. 
-
-Note that we use Python's **@property** and **@<attr_name>.setter** 
-decorators, where **<attr_name>** is the name of the attribute, e.g., 
-`data` or `next`
-Read https://docs.python.org/3/library/functions.html#property to learn about
-the these Python decorators.
+* `self.data`holds an integer
+* `self.next`holds a reference to a Node object
 
 The basis of this implementation is Brad Miller and Dave Ranum's
 Runestone Academy textbook, *Problem Solving with Algorithms and Data
@@ -46,7 +34,7 @@ class UnsortedList:
     """
     UnorderedList ADT implemented with a linked list of Node  objects
     Instance variables
-        _head: object reference (or address or id) of a Node
+        head: object reference (or address or id) of a Node
             or None, if this unordered list doesn't have any Node
         Note: In Python, the value of  object reference is a positive integer
             obtained from calling id() and passing the object as argument.
@@ -58,8 +46,6 @@ The `UnsortedList` class implements the linked list data structure of a
 empty
 
 The API of this class has:
-* getter and setter for `self._head` instance variable: `head(self)` and 
-  `head(self, other_node)`
 * `__str__()` special method to produce a string representation of an 
   unsorted list object
 * methods that implement UnsortedList ADT operations:
@@ -88,10 +74,11 @@ The API of this class has:
 To understand the problem, we need to know **what** the **output** should 
 be for different **input** cases. That's why we write test 
 cases as testing functions in `main.py` module. These testing functions are 
-called one at a time in `main()` function. 
+called one at a time in `main()` function. You can use the example main.py or write
+your own implmentation using UnitTest module.
 
 Each `UnsortedList` method has its own testing function. 
-- `test_prepen()` has been implemneted and discussed in class. Just run 
+- `test_prepend()` has been implemented and discussed in class. Just run 
   `main.py` program to see the resutls. 
 - `test_size()` and `test_search()` are testing functions for methods that 
   have also been implemented. 
@@ -163,9 +150,6 @@ your local repo using the following `git` commands in PyCharm `git-bash` or
 - `git remote -v` \<--- shows the remote URL, to ensure that you push to the right remote repo
 - `git log`\<--- to see the all your commits
 - `git push origin main` \<-- to publish your local repo to GitHub
-
-In the GitHub organization **2023-spring-comp-525** , check out that your 
-**h3-xxx** repo has been updated.
 
 ### Evaluation
 

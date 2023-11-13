@@ -8,3 +8,18 @@ new list with only the even numbers. For example, if the input is
 - No need for design documents, unit tests, etc. Just the function and a call
 to the function.
 """
+
+def even_numbers(num_list):
+    """
+    Build and return a new list that has only the even numbers from the num_list
+    :param num_list: list of integers
+    :return: list of integers
+    """
+    event_list = []
+    for number in num_list:
+        if number % 2 == 0:
+            event_list.append(number)
+
+    return(event_list)
+
+even_numbers([1,2,3,4,5,6])

@@ -8,3 +8,18 @@ Create a Python function that calculates the factorial of a given non-negative
 - No need for design documents, unit tests, etc. Just the function and a call
 to the function.
 """
+
+def factorial_recursive(num):
+    """
+    Take in an integer and return its factorial. 
+    :param num_: integer
+    :return: integer
+    time complexity: O(n)
+    """
+    if num == 1:
+        return num
+    else:
+        return num * factorial_recursive(num - 1)
+    
+result = factorial_recursive(5)
+print (result)

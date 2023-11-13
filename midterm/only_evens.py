@@ -14,6 +14,7 @@ def even_numbers(num_list):
     Build and return a new list that has only the even numbers from the num_list
     :param num_list: list of integers
     :return: list of integers
+    time complexity: O(n)
     """
     event_list = []
     for number in num_list:
@@ -22,4 +23,5 @@ def even_numbers(num_list):
 
     return(event_list)
 
-even_numbers([1,2,3,4,5,6])
+result = even_numbers([1,2,3,4,5,6])
+print(result)

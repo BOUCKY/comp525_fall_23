@@ -1,7 +1,7 @@
 """
 unorderedlist.py
-Jon Shallow
-20231102
+Alexis Boucouvalas
+12/23/2023
 """
 
 from node import Node
@@ -67,23 +67,55 @@ class UnorderedList:
         string is empty string.
         :return: string
         """
-        pass
+        items = []
+        curr_node = self.head
+        while curr_node:
+            items.append(str(curr_node.get_data()))
+            curr_node = curr_node.get_next()
+        return ','.join(items)
+
 
     def append(self, item):
-        # Appending happens at the end of the unsorted list.
-        # Replace these comments with a well-formed docstring.
-        pass
+        """
+        Append an item at the end of the unordered list.
+        :param item: integer
+        """
+        new_node = Node(item)
+        if not self.head:
+            self.head = new_node
+            return
+        last_node = self.head
+        while last_node.get_next():
+            last_node = last_node.get_next()
+        last_node.set_next(new_node)
+
 
     def pop(self):
-        # Popping happens at the front of the unsorted list.
-        # If popping is successful, the method removes the 1st node and
-        # returns the data item in the node. Otherwise, the method returns
-        # None.
-        # Replace these comments with a well-written docstring.
-        pass
+        """
+        Remove and return the first item in the unordered list.
+        :return: integer if the list is not empty, otherwise None
+        """
+        if not self.head:
+            return None
+        popped_item = self.head.get_data()
+        self.head = self.head.get_next()
+        return popped_item
 
     def remove(self, item):
-        # If the item is removed successfully, return the item.
-        # Otherwise, return the `self._head`.
-        # Replace these comments with a well-formed docstring.
-        pass
+        """
+        Remove the first occurrence of the item from the unordered list.
+        :param item: integer
+        :return: item if found and removed, otherwise self._head
+        """
+        prev_node = None
+        curr_node = self.head
+        while curr_node:
+            if curr_node.get_data() == item:
+                if prev_node:
+                    prev_node.set_next(curr_node.get_next())
+                else:
+                    self.head = curr_node.get_next()
+                return item
+            prev_node = curr_node
+            curr_node = curr_node.get_next()
+        return self.head
